@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	
+</head>
+<body>
+	<div id="header">
+		<div id="header-son">
+  
+		      <div id="companys">
+		         <em id="logo">
+		           <img src="images/friendslist.png">
+		         </em>
+		         <span class="name">
+		           客户服务平台
+		         </span>
+		      </div>
+		     
+		     
+		      <div id="header-select">
+		         <ul>
+		         	<li class="active"><a href="#">首页</a></li>
+		         	<li><a href="handle.html">我要办理</a></li>
+		         	<li><a href="count-message.html">我的账单</a></li>
+		         	<li><a href="my-data.html">我的资料</a></li>
+		         </ul>
+		      </div>
+		   
+
+
+		      <div id="login-user">
+		          <a href="#">
+		             <img src="images/test.jpg" /><span>李四李四李四</span>
+		          </a>
+		          <a href="#">
+		   
+		            退出登录
+		          </a>
+		      </div>
+      
+       </div>
+	</div>
+	<div class="left-f">
+		<ul>
+			<li class="active2 person-d"><a href="#">个人信息</a></li>
+			<li><a href="#" class="contract-d">合同信息</a></li>
+		</ul>
+	</div>
+	
+	<div class="done-package" style="display: none;">
+		<table border="1" width="80%" height="300px">
+			<tr>
+				<th>合同编号</th>
+				<th>合同名称</th>
+				<th>合同甲方</th>
+				<th>合同乙方</th>
+				<th>合同类型</th>
+				<th>上传时间</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+       </table>
+	</div>
+	<div class="person-data">
+		 <table border="1" width="100%">
+			　<tr><th>客户名称<td></td></th><th>地区<td></td></th></tr>
+			　<tr><th>企业性质<td></td></th><th>行业分类<td></td></th></tr>
+			  <tr><th>负荷性质<td></td></th><th>总用电量<td></td></th></tr>
+
+		      <tr><th rowspan="7">联系人及联系电话<td><th>客户经理<td>
+			　
+			　<tr><td><th rowspan="6"><td rowspan="6">
+			　<tr><td>
+			  <tr><td>
+			　<tr><td>
+			  <tr><td>
+			　<tr><td>
+       </table>
+	</div>
+	<script type="text/javascript">
+		$("#header-select li").on("mouseover",function(){
+		  $(this).addClass("active").siblings().removeClass("active");
+		})
+		$(".left-f li").on("click",function(){
+		  $(this).addClass("active2").siblings().removeClass("active2");
+		})
+		$(".person-d").on("click",function(){
+		 $('.person-data').show()
+		 $('.done-package').hide()
+		})
+		$(".contract-d").on("click",function(){
+		
+		 $('.done-package').show()
+		  $('.person-data').hide()
+		})
+	</script>
+</body>
+</html>

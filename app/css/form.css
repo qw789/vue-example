@@ -1,0 +1,203 @@
+.cb-container {
+  width: 1000px;
+  text-align: center;
+  margin-top: 50px;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  color: #dcdcdc;
+  font-family: 'Open Sans';
+}
+#checkbox {
+  display: none;
+}
+.cb-label {
+  height: 100px;
+  width: 100px;
+  background: #f9f9f9;
+  border: 10px solid #cfcece;
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  transition: border-color ease 0.2s;
+  -moz-transition: border-color ease 0.2s;
+  -o-transition: border-color ease 0.2s;
+  -webkit-transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+.cb-label::before,
+.cb-label::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: 20px;
+  background: #fff;
+  display: inline-block;
+  -ms-transform-origin: left top;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  content: '';
+  -webkit-transition: opacity ease 0.5s;
+  transition: opacity ease 0.5s;
+}
+.cb-label::before {
+  top: 76px;
+  left: 31px;
+  -ms-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.cb-label::after {
+  top: 45px;
+  left: 0px;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+input[type=checkbox]:checked + .cb-label,
+.cb-label.checked {
+  background: #658db5;
+  border-color: #658db5;
+}
+input[type=checkbox]:checked + .cb-label::after,
+.cb-label.checked::after {
+  border-color: #fff;
+  height: 35px;
+  -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+  animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+input[type=checkbox]:checked + .cb-label::before,
+.cb-label.checked::before {
+  border-color: #fff;
+  height: 100px;
+  -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+  animation: dothatopcheck 0.4s ease 0s forwards;
+}
+@-webkit-keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 35px;
+  }
+}
+@keyframes dothabottomcheck {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 35px;
+  }
+}
+@keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 70px;
+  }
+}
+@-webkit-keyframes dothatopcheck {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 0;
+  }
+  100% {
+    height: 70px;
+  }
+}
+.input-container {
+  width: 500px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-flow: column-reverse;
+  -webkit-flex-flow: column-reverse;
+          flex-flow: column-reverse;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  margin: 100px auto;
+}
+.input-container input {
+  -webkit-box-ordinal-group: 11;
+  -webkit-order: 10;
+          order: 10;
+  -ms-flex-order: 10;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+  border-bottom: 1px solid #d5d5d5;
+  text-indent: 10px;
+}
+.input-container input::-moz-placeholder {
+  opacity: 0;
+}
+.input-container input::-webkit-input-placeholder {
+  opacity: 0;
+}
+.input-container input:-ms-input-placeholder {
+  opacity: 0;
+}
+.input-container input,
+.input-container label {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.input-container label {
+  -webkit-box-ordinal-group: 101;
+  -ms-flex-order: 100;
+  -webkit-order: 100;
+          order: 100;
+  color: #3f4f5b;
+  -webkit-transform-origin: left bottom;
+  -ms-transform-origin: left bottom;
+      transform-origin: left bottom;
+  -webkit-transform: translate(10px, 40px);
+  -ms-transform: translate(0px, 40px);
+      transform: translate(0px, 40px);
+}
+.input-container .bottom-line {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 0;
+  height: 2px;
+  background: #658db5;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.input-container input:focus {
+  border-bottom-color: #fff;
+}
+.input-container input:focus ~ div,
+.input-container input:not(:placeholder-shown) ~ div {
+  width: 100%;
+}
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+  color: #52616c;
+  -webkit-transform: translate(10px) scale(0.9);
+  -ms-transform: translate(10px) scale(0.9);
+      transform: translate(10px) scale(0.9);
+}
